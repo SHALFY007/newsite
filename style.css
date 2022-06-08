@@ -4,7 +4,7 @@
 }
 .header {
     background: url(img/bg.png);
-    min-height: 972px;
+    min-height: 961px;
     width: 100%;
     max-width: 1920px;
     display: flex;
@@ -46,4 +46,57 @@
 }
 .header-choosed {
     color: #ffff;
+}
+.header-text {
+    margin-top: 122px;
+    margin-left: 16%;
+}
+.header-text-base {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 100.4%;
+    /* or 75px */
+
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ordn' on;
+
+    color: #FCFCFC;
+}
+.header-text-under {
+    margin-top: 65px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+
+    color: #FCFCFC;
+
+}
+.header-button {
+    margin-top: 100px;
+    width: 500px;
+    height: 90px;
+    background-color: #fff;
+    border: none;
+    border-radius: 7px;
+}
+.header-button-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+
+    color: #060606;
+
+}
+.header-button:hover {
+    background-color: #060606;
+}
+.header-button:hover .header-button-text {
+    color: #fff;
 }

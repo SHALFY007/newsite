@@ -1,3 +1,6 @@
+window.addEventListener('load', e => {
+    console.log('Сайт прогрузился');
+});
 const headerList = document.querySelector(".header-list");
 headerList.addEventListener("click", event => {
     if (!event.target.classList.contains('header-list-mini')) {
@@ -22,3 +25,8 @@ function renderHeaderChoosed() {
 </svg>`
     event.target.insertAdjacentHTML("beforeend", a);
 }
+const headerButton = document.querySelector('.header-button');
+const headerButtonText = document.querySelector('.header-button-text');
+headerButton.addEventListener('click', event => {
+    headerButtonText.textContent = "Заявка оставлена";
+})
