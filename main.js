@@ -29,4 +29,17 @@ const headerButton = document.querySelector('.header-button');
 const headerButtonText = document.querySelector('.header-button-text');
 headerButton.addEventListener('click', event => {
     headerButtonText.textContent = "Заявка оставлена";
-})
+});
+function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+        change.target.classList.add('show');
+      }
+    });
+  }
+  let options = { threshold: [0.25] };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('.block-img');
+  for (let elm of elements) {
+    observer.observe(elm);
+  }
