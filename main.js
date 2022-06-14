@@ -1,3 +1,6 @@
+const headerText = document.querySelector('.header-text');
+const basePart = document.querySelector('.base-part');
+const InvisText = document.querySelector('.invis-text');
 window.addEventListener('load', e => {
     console.log('Сайт прогрузился');
 });
@@ -16,6 +19,7 @@ function setChooseText() {
     choosedText.classList.remove('header-choosed');
     event.target.classList.add('header-choosed');
     renderHeaderChoosed();
+    renderPage();
 }
 function renderHeaderChoosed() {
     let choocedImage = document.querySelector('.header-choosed-image');
@@ -24,6 +28,18 @@ function renderHeaderChoosed() {
     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9746 0.61282C9.57883 1.62074 7.64148 2.24521 5.49993 2.24521C3.35844 2.24521 1.42114 1.62078 0.025428 0.61291C0.00860599 0.788074 0 0.965638 0 1.14521C0 4.18278 2.46243 6.64521 5.5 6.64521C8.53756 6.64521 11 4.18278 11 1.14521C11 0.965607 10.9914 0.788014 10.9746 0.61282Z" fill="#FCFCFC"/>
 </svg>`
     event.target.insertAdjacentHTML("beforeend", a);
+}
+function renderPage() {
+    let a = event.target.textContent;
+    if (a.replace(/\s/g, '') !== 'Главная') {
+        headerText.classList.add('invis');
+        basePart.classList.add('invis');
+        InvisText.classList.remove('invis-text');
+    } else {
+        headerText.classList.remove('invis');
+        basePart.classList.remove('invis');
+        InvisText.classList.add('invis-text');
+    }
 }
 const headerButton = document.querySelector('.header-button');
 const headerButtonText = document.querySelector('.header-button-text');
@@ -43,3 +59,4 @@ function onEntry(entry) {
   for (let elm of elements) {
     observer.observe(elm);
   }
+
